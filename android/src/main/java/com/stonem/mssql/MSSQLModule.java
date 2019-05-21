@@ -16,6 +16,8 @@ import java.sql.DriverManager;
 /**
  * Created by David Stoneham on 2017-02-25.
  */
+
+// add Instance config by demonhunt
 public class MSSQLModule extends ReactContextBaseJavaModule {
     private String sqlError;
     private Promise sqlPromise;
