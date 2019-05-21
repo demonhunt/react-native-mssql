@@ -43,7 +43,14 @@ public class MSSQLModule extends ReactContextBaseJavaModule {
             int port = config.getInt("port");
             server = server + ":" + port;
         }
-        String ConnURL = "jdbc:jtds:sqlserver://" + server + ";" + "instance=" +instanceName+ ";" + "integratedSecurity=true;databaseName=" + database + ";useLOBs=false"
+
+        String instance = "";
+          if (!instanceName.equals("null")) {
+
+            instance = "instance=" +instanceName+ ";";
+        }
+        
+        String ConnURL = "jdbc:jtds:sqlserver://" + server + ";" + instance + "integratedSecurity=true;databaseName=" + database + ";useLOBs=false"
                 + ";user=" + username + ";password=" + password + ";loginTimeout=5;";
         Log.v("ReactNative", ConnURL);
         new AsyncTask<String, Void, Void>() {
